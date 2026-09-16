@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <header className="w-full px-6 sm:px-10 lg:px-16 py-6 md:py-8 flex items-center justify-between text-zinc-900 text-sm sm:text-base font-sans">
       {/* Brand Logo & Name */}
@@ -26,14 +29,22 @@ export default function Navbar() {
       {/* Navigation Links */}
       <nav className="flex items-center gap-6 sm:gap-8 font-medium text-zinc-900">
         <Link
-          href="#website"
-          className="hover:text-zinc-500 transition-colors duration-200"
+          href="/"
+          className={`transition-colors duration-200 ${
+            pathname === "/"
+              ? "text-zinc-950    "
+              : "text-zinc-600 hover:text-zinc-950"
+          }`}
         >
           Website
         </Link>
         <Link
-          href="#landing-page"
-          className="hover:text-zinc-500 transition-colors duration-200"
+          href="/landing-page"
+          className={`transition-colors duration-200 ${
+            pathname === "/landing-page"
+              ? "text-zinc-950   "
+              : "text-zinc-600 hover:text-zinc-950"
+          }`}
         >
           Landing Page
         </Link>
@@ -42,7 +53,7 @@ export default function Navbar() {
       {/* Contact CTA */}
       <div>
         <a
-          href="mailto:hello@triplehash.com"
+          href="mailto:connect@triplehash.com"
           className="flex items-center gap-1.5 text-zinc-900 hover:text-zinc-500 transition-colors duration-200 font-normal"
         >
           <span className="text-base select-none">↪</span>
