@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import CustomCursor from "./CustomCursor";
 
 const projectCards = [
   {
     id: 1,
+    slug: "code-interface",
     title: "Code Interface",
     category: "IDE & Developer Tooling",
     renderContent: () => (
@@ -36,6 +38,7 @@ const projectCards = [
   },
   {
     id: 2,
+    slug: "synthex-bio",
     title: "Synthex Bio-Intelligence",
     category: "Web Design & Digital Architecture",
     renderContent: () => (
@@ -75,6 +78,7 @@ const projectCards = [
   },
   {
     id: 3,
+    slug: "therapeutics-dashboard",
     title: "Therapeutics Dashboard",
     category: "Molecular Innovation Platform",
     renderContent: () => (
@@ -101,7 +105,8 @@ const projectCards = [
   },
   {
     id: 4,
-    title: "Hardware & Platform Mockup",
+    slug: "synthra",
+    title: "Synthra Showcase",
     category: "3D Product Showcase",
     renderContent: () => (
       <div className="w-full h-full flex flex-col justify-center items-center p-8 relative overflow-hidden bg-zinc-950">
@@ -152,14 +157,15 @@ export default function WorkCarousel() {
         }}
       >
         {row1Cards.map((card, index) => (
-          <div
+          <Link
             key={`row1-${card.id}-${index}`}
+            href={`/works/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none"
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none block"
           >
             {card.renderContent()}
-          </div>
+          </Link>
         ))}
       </motion.div>
 
@@ -176,14 +182,15 @@ export default function WorkCarousel() {
         }}
       >
         {row2Cards.map((card, index) => (
-          <div
+          <Link
             key={`row2-${card.id}-${index}`}
+            href={`/works/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none"
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none block"
           >
             {card.renderContent()}
-          </div>
+          </Link>
         ))}
       </motion.div>
     </div>

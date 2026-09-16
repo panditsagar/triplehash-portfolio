@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import CustomCursor from "./CustomCursor";
 
 const landingCards = [
   {
     id: 1,
+    slug: "synthra",
     title: "AI Co-Pilot Launch",
     category: "SaaS Landing Page",
     renderContent: () => (
@@ -45,6 +47,7 @@ const landingCards = [
   },
   {
     id: 2,
+    slug: "synthex-bio",
     title: "Fintech Mobile App Launch",
     category: "Mobile Landing Page",
     renderContent: () => (
@@ -84,6 +87,7 @@ const landingCards = [
   },
   {
     id: 3,
+    slug: "therapeutics-dashboard",
     title: "Minimalist E-Commerce Launch",
     category: "Product Landing Page",
     renderContent: () => (
@@ -116,6 +120,7 @@ const landingCards = [
   },
   {
     id: 4,
+    slug: "code-interface",
     title: "Developer API Platform",
     category: "Developer Documentation & Landing",
     renderContent: () => (
@@ -168,14 +173,15 @@ export default function LandingCarousel() {
         }}
       >
         {row1Cards.map((card, index) => (
-          <div
+          <Link
             key={`landing-row1-${card.id}-${index}`}
+            href={`/works/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none"
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none block"
           >
             {card.renderContent()}
-          </div>
+          </Link>
         ))}
       </motion.div>
 
@@ -192,14 +198,15 @@ export default function LandingCarousel() {
         }}
       >
         {row2Cards.map((card, index) => (
-          <div
+          <Link
             key={`landing-row2-${card.id}-${index}`}
+            href={`/works/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none"
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none block"
           >
             {card.renderContent()}
-          </div>
+          </Link>
         ))}
       </motion.div>
     </div>
