@@ -50,7 +50,7 @@ const row1LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website3.png"
+          src="/landingpage/landingpage3.png"
           alt="Landing Page Project 3 Showcase"
           fill
           className="object-cover object-top"
@@ -67,7 +67,7 @@ const row1LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website4.png"
+          src="/landingpage/landingpage4.png"
           alt="Landing Page Project 4 Showcase"
           fill
           className="object-cover object-top"
@@ -84,7 +84,7 @@ const row1LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website5.png"
+          src="/landingpage/landingpage5.png"
           alt="Landing Page Project 5 Showcase"
           fill
           className="object-cover object-top"
@@ -105,7 +105,7 @@ const row2LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website1.png"
+          src="/landingpage/landingpage6.png"
           alt="Landing Page Project 6 Showcase"
           fill
           className="object-cover object-top"
@@ -122,7 +122,7 @@ const row2LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website2.png"
+          src="/landingpage/landingpage7.png"
           alt="Landing Page Project 7 Showcase"
           fill
           className="object-cover object-top"
@@ -139,7 +139,7 @@ const row2LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website3.png"
+          src="/landingpage/landingpage8.png"
           alt="Landing Page Project 8 Showcase"
           fill
           className="object-cover object-top"
@@ -156,7 +156,7 @@ const row2LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website4.png"
+          src="/landingpage/landingpage9.png"
           alt="Landing Page Project 9 Showcase"
           fill
           className="object-cover object-top"
@@ -173,7 +173,7 @@ const row2LandingCards = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website5.png"
+          src="/landingpage/landingpage10.png"
           alt="Landing Page Project 10 Showcase"
           fill
           className="object-cover object-top"
