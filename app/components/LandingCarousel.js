@@ -184,6 +184,94 @@ const row2LandingCards = [
   },
 ];
 
+// Row 3: Reuse row 1 samples until dedicated row-3 projects are added.
+const row3LandingCards = [
+  {
+    id: 11,
+    slug: "sample-landing-page-11",
+    title: "Landing Page Project 11",
+    category: "Enterprise Security Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage11.png"
+          alt="Landing Page Project 11 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 12,
+    slug: "sample-landing-page-12",
+    title: "Landing Page Project 12",
+    category: "SaaS OS Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage12.png"
+          alt="Landing Page Project 12 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 13,
+    slug: "sample-landing-page-13",
+    title: "Landing Page Project 13",
+    category: "HealthTech Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage13.png"
+          alt="Landing Page Project 13 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 14,
+    slug: "sample-landing-page-14",
+    title: "Landing Page Project 14",
+    category: "Spatial 3D Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage14.png"
+          alt="Landing Page Project 14 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 15,
+    slug: "sample-landing-page-15",
+    title: "Landing Page Project 15",
+    category: "CleanTech Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage15.png"
+          alt="Landing Page Project 15 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+];
 export default function LandingCarousel() {
   const [isCursorVisible, setIsCursorVisible] = useState(false);
 
@@ -198,6 +286,12 @@ export default function LandingCarousel() {
     ...row2LandingCards,
     ...row2LandingCards,
     ...row2LandingCards,
+  ];
+
+  const row3Cards = [
+    ...row3LandingCards,
+    ...row3LandingCards,
+    ...row3LandingCards,
   ];
 
   return (
@@ -245,6 +339,31 @@ export default function LandingCarousel() {
         {row2Cards.map((card, index) => (
           <Link
             key={`landing-row2-${card.id}-${index}`}
+            href={`/landing-page/${card.slug}`}
+            onMouseEnter={() => setIsCursorVisible(true)}
+            onMouseLeave={() => setIsCursorVisible(false)}
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
+          >
+            {card.renderContent()}
+          </Link>
+        ))}
+      </motion.div>
+
+      {/* Row 3: Right-to-Left (same motion as Row 1) */}
+      <motion.div
+        className="flex gap-3 sm:gap-4 w-max"
+        animate={{
+          x: ["0%", "-33.3333%"],
+        }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 75,
+        }}
+      >
+        {row3Cards.map((card, index) => (
+          <Link
+            key={`landing-row3-${card.id}-${index}`}
             href={`/landing-page/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
