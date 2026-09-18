@@ -272,6 +272,185 @@ const row3LandingCards = [
     ),
   },
 ];
+
+// Row 4: Dummy projects ready to be replaced with real content later.
+const row4LandingCards = [
+  {
+    id: 16,
+    slug: "sample-landing-page-16",
+    title: "Landing Page Project 16",
+    category: "Dummy SaaS Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage16.png"
+          alt="Landing Page Project 16 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 17,
+    slug: "sample-landing-page-17",
+    title: "Landing Page Project 17",
+    category: "Dummy Product Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage17.png"
+          alt="Landing Page Project 17 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 18,
+    slug: "sample-landing-page-18",
+    title: "Landing Page Project 18",
+    category: "Dummy Mobile Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage18.png"
+          alt="Landing Page Project 18 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 19,
+    slug: "sample-landing-page-19",
+    title: "Landing Page Project 19",
+    category: "Dummy AI Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage19.png"
+          alt="Landing Page Project 19 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 20,
+    slug: "sample-landing-page-20",
+    title: "Landing Page Project 20",
+    category: "Dummy Enterprise Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage20.png"
+          alt="Landing Page Project 20 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+];
+
+// Row 5: Projects 21 to 25.
+const row5LandingCards = [
+  {
+    id: 21,
+    slug: "sample-landing-page-21",
+    title: "Landing Page Project 21",
+    category: "SaaS Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage21.png"
+          alt="Landing Page Project 21 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 22,
+    slug: "sample-landing-page-22",
+    title: "Landing Page Project 22",
+    category: "Product Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage22.png"
+          alt="Landing Page Project 22 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 23,
+    slug: "sample-landing-page-23",
+    title: "Landing Page Project 23",
+    category: "Mobile Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage23.png"
+          alt="Landing Page Project 23 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 24,
+    slug: "sample-landing-page-24",
+    title: "Landing Page Project 24",
+    category: "AI Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage24.png"
+          alt="Landing Page Project 24 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 25,
+    slug: "sample-landing-page-25",
+    title: "Landing Page Project 25",
+    category: "Enterprise Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage25.png"
+          alt="Landing Page Project 25 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+];
+
 export default function LandingCarousel() {
   const [isCursorVisible, setIsCursorVisible] = useState(false);
 
@@ -292,6 +471,18 @@ export default function LandingCarousel() {
     ...row3LandingCards,
     ...row3LandingCards,
     ...row3LandingCards,
+  ];
+
+  const row4Cards = [
+    ...row4LandingCards,
+    ...row4LandingCards,
+    ...row4LandingCards,
+  ];
+
+  const row5Cards = [
+    ...row5LandingCards,
+    ...row5LandingCards,
+    ...row5LandingCards,
   ];
 
   return (
@@ -364,6 +555,56 @@ export default function LandingCarousel() {
         {row3Cards.map((card, index) => (
           <Link
             key={`landing-row3-${card.id}-${index}`}
+            href={`/landing-page/${card.slug}`}
+            onMouseEnter={() => setIsCursorVisible(true)}
+            onMouseLeave={() => setIsCursorVisible(false)}
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
+          >
+            {card.renderContent()}
+          </Link>
+        ))}
+      </motion.div>
+
+      {/* Row 4: Left-to-Right (same motion as Row 2) */}
+      <motion.div
+        className="flex gap-3 sm:gap-4 w-max"
+        animate={{
+          x: ["-33.3333%", "0%"],
+        }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 75,
+        }}
+      >
+        {row4Cards.map((card, index) => (
+          <Link
+            key={`landing-row4-${card.id}-${index}`}
+            href={`/landing-page/${card.slug}`}
+            onMouseEnter={() => setIsCursorVisible(true)}
+            onMouseLeave={() => setIsCursorVisible(false)}
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
+          >
+            {card.renderContent()}
+          </Link>
+        ))}
+      </motion.div>
+
+      {/* Row 5: Right-to-Left (same motion as Row 1) */}
+      <motion.div
+        className="flex gap-3 sm:gap-4 w-max"
+        animate={{
+          x: ["0%", "-33.3333%"],
+        }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 75,
+        }}
+      >
+        {row5Cards.map((card, index) => (
+          <Link
+            key={`landing-row5-${card.id}-${index}`}
             href={`/landing-page/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
