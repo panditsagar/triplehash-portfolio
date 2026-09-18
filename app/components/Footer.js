@@ -60,7 +60,7 @@ export default function Footer() {
                 href="mailto:hello@triplehash.com"
                 className="text-white font-medium text-xs sm:text-sm hover:underline"
               >
-                connect@triplehash.com
+                connect@triplehash.in
               </a>
               <span className="text-zinc-400 text-[11px] sm:text-xs">
                 +1 (555) 019-2834

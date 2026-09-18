@@ -2,148 +2,183 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import CustomCursor from "./CustomCursor";
 
-const landingCards = [
+// Row 1: 5 Unique Landing Page Projects (sample-landing-page-1 to 5)
+const row1LandingCards = [
   {
     id: 1,
-    slug: "synthra",
-    title: "AI Co-Pilot Launch",
+    slug: "sample-landing-page-1",
+    title: "Landing Page Project 01",
     category: "SaaS Landing Page",
     renderContent: () => (
-      <div className="w-full h-full flex flex-col justify-between p-8 relative overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950 border border-indigo-900/30">
-        {/* Ambient glow */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Landing Page Navbar Mockup */}
-        <div className="flex justify-between items-center text-xs text-slate-300 border-b border-slate-800/80 pb-3">
-          <span className="font-semibold text-white tracking-wide flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-indigo-400 inline-block" />
-            Nexus AI
-          </span>
-          <div className="flex items-center gap-4 text-slate-400 text-[11px]">
-            <span>Features</span>
-            <span>Pricing</span>
-            <span className="bg-indigo-600 text-white px-3 py-1 rounded-full font-medium">Get Started</span>
-          </div>
-        </div>
-
-        {/* Hero Section Copy */}
-        <div className="my-auto space-y-3">
-          <span className="inline-block px-3 py-1 rounded-full bg-indigo-900/40 text-indigo-300 border border-indigo-700/30 text-[11px] font-mono">
-            ⚡ Powered by Next.js 16
-          </span>
-          <h4 className="text-2xl sm:text-3xl font-light tracking-tight text-white leading-tight">
-            Build Intelligence <br />
-            <span className="font-semibold text-indigo-300">Into Every Workflow</span>
-          </h4>
-          <p className="text-xs text-slate-400 max-w-[340px] leading-relaxed">
-            Autonomous agentic AI infrastructure engineered for high growth teams.
-          </p>
-        </div>
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage1.png"
+          alt="Landing Page Project 1 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
       </div>
     ),
   },
   {
     id: 2,
-    slug: "synthex-bio",
-    title: "Fintech Mobile App Launch",
+    slug: "sample-landing-page-2",
+    title: "Landing Page Project 02",
     category: "Mobile Landing Page",
     renderContent: () => (
-      <div className="w-full h-full p-8 flex justify-between items-center relative overflow-hidden bg-zinc-950 border border-emerald-900/30">
-        {/* Glow */}
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Left Copy */}
-        <div className="space-y-3 max-w-[280px]">
-          <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider">FINTECH PLATFORM</span>
-          <h4 className="text-2xl sm:text-3xl font-light text-white leading-tight">
-            The Future of <br />
-            <span className="font-normal text-emerald-300">Borderless Payments</span>
-          </h4>
-          <p className="text-xs text-zinc-400 leading-relaxed">
-            Zero transaction friction across 140 currencies.
-          </p>
-          <div className="flex gap-3 pt-2">
-            <div className="px-4 py-2 bg-emerald-500 text-zinc-950 rounded text-xs font-semibold">Download App</div>
-            <div className="px-4 py-2 border border-zinc-800 text-zinc-300 rounded text-xs">Learn More</div>
-          </div>
-        </div>
-
-        {/* Right Phone Mockup */}
-        <div className="w-44 aspect-[9/18] bg-zinc-900 rounded-2xl border-2 border-zinc-700 p-2 shadow-2xl flex flex-col justify-between hidden sm:flex">
-          <div className="w-12 h-2 bg-zinc-800 rounded-full mx-auto" />
-          <div className="bg-emerald-950/60 p-3 rounded-lg border border-emerald-800/30 text-center">
-            <p className="text-[10px] text-zinc-400">Total Portfolio</p>
-            <p className="text-lg text-emerald-300 font-bold">$128,490.00</p>
-          </div>
-          <div className="w-full h-8 bg-emerald-500 rounded text-[10px] font-semibold text-zinc-950 flex items-center justify-center">
-            Send Payment
-          </div>
-        </div>
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/landingpage/landingpage2.png"
+          alt="Landing Page Project 2 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
       </div>
     ),
   },
   {
     id: 3,
-    slug: "therapeutics-dashboard",
-    title: "Minimalist E-Commerce Launch",
+    slug: "sample-landing-page-3",
+    title: "Landing Page Project 03",
     category: "Product Landing Page",
     renderContent: () => (
-      <div className="w-full h-full p-8 flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800">
-        <div className="flex justify-between items-center">
-          <span className="text-xs font-mono text-zinc-400">SERIES 01 // AUDIO</span>
-          <span className="text-xs text-zinc-300 font-semibold">$349.00</span>
-        </div>
-
-        <div className="my-auto space-y-2">
-          <h4 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
-            Acoustic Precision. <br />
-            <span className="font-normal text-zinc-400">Uncompromised Design.</span>
-          </h4>
-          <p className="text-xs text-zinc-400 max-w-[320px]">
-            Custom titanium driver units crafted for audiophiles.
-          </p>
-        </div>
-
-        <div className="flex justify-between items-center border-t border-zinc-800/80 pt-4">
-          <div className="text-xs text-zinc-400">
-            ★ ★ ★ ★ ★ <span className="text-zinc-200 ml-1">4.9 (1.2k reviews)</span>
-          </div>
-          <button className="px-4 py-2 bg-white text-zinc-950 font-semibold text-xs rounded hover:bg-zinc-200 transition-colors">
-            Pre-Order Now
-          </button>
-        </div>
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website3.png"
+          alt="Landing Page Project 3 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
       </div>
     ),
   },
   {
     id: 4,
-    slug: "code-interface",
-    title: "Developer API Platform",
+    slug: "sample-landing-page-4",
+    title: "Landing Page Project 04",
     category: "Developer Documentation & Landing",
     renderContent: () => (
-      <div className="w-full h-full p-8 flex flex-col justify-between relative overflow-hidden bg-zinc-950 border border-purple-900/30">
-        <div className="flex justify-between items-center text-xs text-purple-300 font-mono">
-          <span>API PLATFORM</span>
-          <span>⚡ 99.99% UPTIME</span>
-        </div>
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website4.png"
+          alt="Landing Page Project 4 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 5,
+    slug: "sample-landing-page-5",
+    title: "Landing Page Project 05",
+    category: "Biotechnology Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website5.png"
+          alt="Landing Page Project 5 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+];
 
-        <div className="my-auto space-y-2">
-          <h4 className="text-2xl sm:text-3xl font-light text-white leading-tight">
-            Deploy Global APIs <br />
-            <span className="font-normal text-purple-400">In Under 60 Seconds</span>
-          </h4>
-          <p className="text-xs text-zinc-400 max-w-[340px]">
-            Single line integration with automatic global edge distribution.
-          </p>
-        </div>
-
-        <div className="w-full bg-zinc-900/90 rounded border border-purple-500/20 p-3 text-xs font-mono text-purple-300 flex justify-between items-center">
-          <code>$ npx triplehash-api deploy --prod</code>
-          <span className="text-[10px] text-zinc-500">COPY</span>
-        </div>
+// Row 2: 5 Different Unique Landing Page Projects (sample-landing-page-6 to 10)
+const row2LandingCards = [
+  {
+    id: 6,
+    slug: "sample-landing-page-6",
+    title: "Landing Page Project 06",
+    category: "Enterprise Security Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website1.png"
+          alt="Landing Page Project 6 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 7,
+    slug: "sample-landing-page-7",
+    title: "Landing Page Project 07",
+    category: "SaaS OS Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website2.png"
+          alt="Landing Page Project 7 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 8,
+    slug: "sample-landing-page-8",
+    title: "Landing Page Project 08",
+    category: "HealthTech Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website3.png"
+          alt="Landing Page Project 8 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 9,
+    slug: "sample-landing-page-9",
+    title: "Landing Page Project 09",
+    category: "Spatial 3D Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website4.png"
+          alt="Landing Page Project 9 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+    ),
+  },
+  {
+    id: 10,
+    slug: "sample-landing-page-10",
+    title: "Landing Page Project 10",
+    category: "CleanTech Landing Page",
+    renderContent: () => (
+      <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
+        <Image
+          src="/website/website5.png"
+          alt="Landing Page Project 10 Showcase"
+          fill
+          className="object-cover object-top"
+          priority
+        />
       </div>
     ),
   },
@@ -152,15 +187,25 @@ const landingCards = [
 export default function LandingCarousel() {
   const [isCursorVisible, setIsCursorVisible] = useState(false);
 
-  const row1Cards = [...landingCards, ...landingCards, ...landingCards];
-  const row2Cards = [...[...landingCards].reverse(), ...[...landingCards].reverse(), ...[...landingCards].reverse()];
+  // Tripled arrays for seamless infinite looping marquee matching WorkCarousel
+  const row1Cards = [
+    ...row1LandingCards,
+    ...row1LandingCards,
+    ...row1LandingCards,
+  ];
+
+  const row2Cards = [
+    ...row2LandingCards,
+    ...row2LandingCards,
+    ...row2LandingCards,
+  ];
 
   return (
     <div className="w-full overflow-hidden py-4 select-none flex flex-col gap-3 sm:gap-4 relative">
       {/* Floating Custom "View" Translucent Glass Cursor */}
       <CustomCursor isVisible={isCursorVisible} text="View" />
 
-      {/* Row 1: Right-to-Left */}
+      {/* Row 1: Right-to-Left (5 Unique Landing Pages) */}
       <motion.div
         className="flex gap-3 sm:gap-4 w-max"
         animate={{
@@ -169,23 +214,23 @@ export default function LandingCarousel() {
         transition={{
           repeat: Infinity,
           ease: "linear",
-          duration: 60,
+          duration: 75,
         }}
       >
         {row1Cards.map((card, index) => (
           <Link
             key={`landing-row1-${card.id}-${index}`}
-            href={`/works/${card.slug}`}
+            href={`/landing-page/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none block"
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
           >
             {card.renderContent()}
           </Link>
         ))}
       </motion.div>
 
-      {/* Row 2: Left-to-Right (Opposite Direction) */}
+      {/* Row 2: Left-to-Right (5 Different Unique Landing Pages) */}
       <motion.div
         className="flex gap-3 sm:gap-4 w-max"
         animate={{
@@ -194,16 +239,16 @@ export default function LandingCarousel() {
         transition={{
           repeat: Infinity,
           ease: "linear",
-          duration: 60,
+          duration: 75,
         }}
       >
         {row2Cards.map((card, index) => (
           <Link
             key={`landing-row2-${card.id}-${index}`}
-            href={`/works/${card.slug}`}
+            href={`/landing-page/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden border border-zinc-200/80 flex-shrink-0 relative cursor-none block"
+            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
           >
             {card.renderContent()}
           </Link>

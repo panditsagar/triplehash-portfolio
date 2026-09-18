@@ -1,18 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { projectsData } from "@/lib/projectsData";
+import { websiteData } from "@/lib/websiteData";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
 export function generateStaticParams() {
-  return Object.keys(projectsData).map((slug) => ({
+  return Object.keys(websiteData).map((slug) => ({
     slug,
   }));
 }
 
-export default async function ProjectDetailsPage({ params }) {
+export default async function WebsiteDetailsPage({ params }) {
   const { slug } = await params;
-  const project = projectsData[slug] || projectsData["synthra"];
+  const project = websiteData[slug];
 
   if (!project) {
     notFound();
@@ -25,7 +25,7 @@ export default async function ProjectDetailsPage({ params }) {
 
       {/* Two-Column Details Showcase */}
       <section className="w-full px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 mt-12 sm:mt-16 lg:mt-24 mb-6">
-        {/* Left Metadata Column (Top-aligned on the exact same line as right visual) */}
+        {/* Left Metadata Column */}
         <div className="w-full lg:w-[42%] flex flex-col justify-between flex-shrink-0 pt-0">
           <div className="space-y-8 sm:space-y-10">
             {/* Header & Back Link */}
@@ -103,7 +103,7 @@ export default async function ProjectDetailsPage({ params }) {
           </div>
         </div>
 
-        {/* Right Hero Visual Column (Top-aligned to match left column line) */}
+        {/* Right Hero Visual Column */}
         <div className="w-full lg:w-[58%] relative flex items-start justify-end pt-0">
           {project.renderShowcase()}
         </div>
