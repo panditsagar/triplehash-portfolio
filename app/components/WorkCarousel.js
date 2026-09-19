@@ -123,7 +123,7 @@ const row2CardsData = [
     renderContent: () => (
       <div className="w-full h-full relative overflow-hidden bg-zinc-950 flex items-center justify-center">
         <Image
-          src="/website/website2.png"
+          src="/website/website7.png"
           alt="Website Project 7 Showcase"
           fill
           className="object-cover object-top"
