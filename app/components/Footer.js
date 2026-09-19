@@ -35,7 +35,7 @@ export default function Footer() {
             ( Get in touch )
           </p>
 
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tighter leading-tight text-white mb-2">
+          <h2 className="text-3xl sm:text-6xl lg:text-7xl font-normal tracking-tighter leading-tight text-white mb-2">
             Have a project in mind? <br />
             Let's talk.
           </h2>
@@ -130,7 +130,7 @@ export default function Footer() {
             ©2026. TripleHash
           </p>
 
-          <h1 className="text-5xl sm:text-8xl md:text-[130px] lg:text-[170px] font-medium text-white tracking-tighter leading-none select-none uppercase">
+          <h1 className="text-4xl sm:text-8xl md:text-[130px] lg:text-[170px] font-medium text-white tracking-tighter leading-none select-none uppercase">
             TRIPLEHASH
           </h1>
         </div>
