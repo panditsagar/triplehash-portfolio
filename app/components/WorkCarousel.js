@@ -223,7 +223,7 @@ export default function WorkCarousel() {
             href={`/website/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
+            className="w-[calc(100vw-2rem)] max-w-[380px] aspect-[380/250] sm:w-[500px] sm:max-w-none lg:w-[580px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
           >
             {card.renderContent()}
           </Link>
@@ -248,7 +248,7 @@ export default function WorkCarousel() {
             href={`/website/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[380px] sm:w-[500px] lg:w-[580px] h-[250px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
+            className="w-[calc(100vw-2rem)] max-w-[380px] aspect-[380/250] sm:w-[500px] sm:max-w-none lg:w-[580px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
           >
             {card.renderContent()}
           </Link>
