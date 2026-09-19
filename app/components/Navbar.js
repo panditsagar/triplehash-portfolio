@@ -126,7 +126,7 @@ export default function Navbar() {
             href="mailto:connect@triplehash.in"
             className="flex items-center gap-1.5 text-zinc-900 hover:text-zinc-500 transition-colors duration-200 font-normal"
           >
-            <span className="text-base select-none">â†ª</span>
+            <span className="text-base select-none">↪</span>
             <span>Send me a message</span>
           </a>
         </div>

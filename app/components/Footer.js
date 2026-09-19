@@ -89,7 +89,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/buildwithkunal/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5 lg:justify-end"
@@ -99,7 +99,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/triple.hash/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5 lg:justify-end"
