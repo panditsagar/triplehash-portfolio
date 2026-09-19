@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import CustomCursor from "./CustomCursor";
+import { websiteData } from "@/lib/websiteData";
 
 // Row 1: 5 Unique Websites (Projects 1 to 5)
 const row1CardsData = [
@@ -205,9 +206,41 @@ export default function WorkCarousel() {
       {/* Floating Custom "View" Translucent Glass Cursor */}
       <CustomCursor isVisible={isCursorVisible} text="View" />
 
-      {/* Row 1: Right-to-Left (Matching LandingCarousel running speed) */}
+      {/* Row 1 Mobile: Touch Snap Slider */}
+      <div className="flex sm:hidden overflow-x-auto snap-x snap-mandatory no-scrollbar w-full gap-3 px-4 py-1">
+        {row1CardsData.map((card) => (
+          <Link
+            key={`website-mobile-row1-${card.id}`}
+            href={`/website/${card.slug}`}
+            className="w-[82vw] max-w-[340px] aspect-[380/250] rounded-none overflow-hidden flex-shrink-0 relative block bg-zinc-950 snap-center"
+          >
+            {card.renderContent()}
+            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/70 to-transparent sm:hidden z-10 pointer-events-none flex items-center justify-between gap-2">
+              <p className="text-white text-xs font-medium tracking-wide truncate flex-1">
+                {websiteData[card.slug]?.title || card.title}
+              </p>
+              <svg
+                className="w-3.5 h-3.5 text-white/90 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                />
+              </svg>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Row 1 Desktop: Marquee Loop */}
       <motion.div
-        className="flex gap-3 sm:gap-4 w-max"
+        className="hidden sm:flex gap-3 sm:gap-4 w-max"
         animate={{
           x: ["0%", "-33.3333%"],
         }}
@@ -223,16 +256,48 @@ export default function WorkCarousel() {
             href={`/website/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[calc(100vw-2rem)] max-w-[380px] aspect-[380/250] sm:w-[500px] sm:max-w-none lg:w-[580px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
+            className="sm:w-[500px] lg:w-[580px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
           >
             {card.renderContent()}
           </Link>
         ))}
       </motion.div>
 
-      {/* Row 2: Left-to-Right (Matching LandingCarousel running speed) */}
+      {/* Row 2 Mobile: Touch Snap Slider */}
+      <div className="flex sm:hidden overflow-x-auto snap-x snap-mandatory no-scrollbar w-full gap-3 px-4 py-1">
+        {row2CardsData.map((card) => (
+          <Link
+            key={`website-mobile-row2-${card.id}`}
+            href={`/website/${card.slug}`}
+            className="w-[82vw] max-w-[340px] aspect-[380/250] rounded-none overflow-hidden flex-shrink-0 relative block bg-zinc-950 snap-center"
+          >
+            {card.renderContent()}
+            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 via-black/70 to-transparent sm:hidden z-10 pointer-events-none flex items-center justify-between gap-2">
+              <p className="text-white text-xs font-medium tracking-wide truncate flex-1">
+                {websiteData[card.slug]?.title || card.title}
+              </p>
+              <svg
+                className="w-3.5 h-3.5 text-white/90 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                />
+              </svg>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Row 2 Desktop: Marquee Loop */}
       <motion.div
-        className="flex gap-3 sm:gap-4 w-max"
+        className="hidden sm:flex gap-3 sm:gap-4 w-max"
         animate={{
           x: ["-33.3333%", "0%"],
         }}
@@ -248,7 +313,7 @@ export default function WorkCarousel() {
             href={`/website/${card.slug}`}
             onMouseEnter={() => setIsCursorVisible(true)}
             onMouseLeave={() => setIsCursorVisible(false)}
-            className="w-[calc(100vw-2rem)] max-w-[380px] aspect-[380/250] sm:w-[500px] sm:max-w-none lg:w-[580px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
+            className="sm:w-[500px] lg:w-[580px] sm:h-[330px] lg:h-[380px] rounded-none overflow-hidden flex-shrink-0 relative cursor-none block bg-zinc-950"
           >
             {card.renderContent()}
           </Link>

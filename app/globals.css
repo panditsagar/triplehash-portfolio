@@ -7,3 +7,12 @@
 body {
   font-family: "Chillax", sans-serif;
 }
+
+/* Hide scrollbars for touch sliders */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

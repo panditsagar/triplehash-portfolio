@@ -63,7 +63,7 @@ export default function Footer() {
                 connect@triplehash.in
               </a>
               <span className="text-zinc-400 text-[11px] sm:text-xs">
-                +1 (555) 019-2834
+                 +91 75683 57351
               </span>
             </div>
           </div>

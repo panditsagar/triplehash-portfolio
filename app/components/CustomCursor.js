@@ -24,7 +24,7 @@ export default function CustomCursor({ isVisible, text = "View" }) {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-50 w-18 h-18 rounded-full flex items-center justify-center bg-[#F2F1E8]/10   text-white font-medium text-base shadow-xl"
+      className="fixed top-0 left-0 pointer-events-none z-50 w-18 h-18 rounded-full hidden sm:flex items-center justify-center bg-[#F2F1E8]/10 text-white font-medium text-base shadow-xl"
       style={{
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
